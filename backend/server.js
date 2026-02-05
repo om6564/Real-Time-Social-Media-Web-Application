@@ -23,7 +23,7 @@ initializeSocket(server);
 
 // Middleware
 app.use(cors({
-    origin: '*', 
+    origin: '*',
     credentials: true
 }));
 app.use(express.json({ limit: '10mb' })); // Increased limit for base64 images
@@ -68,7 +68,7 @@ app.use((err, req, res, next) => {
 
 // Start server
 const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => {
+server.listen(PORT, '0.0.0.0', () => {
     console.log(`🚀 Server running on port ${PORT}`);
     console.log(`📡 Socket.io ready for real-time connections`);
 });
